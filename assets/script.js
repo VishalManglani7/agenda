@@ -6,11 +6,8 @@
 
 
 $(function () {
-    var today = dayjs();
-    $('#currentDay').text(today.format('MMM D, YYYY'));
-    
-    var reformatDate = dayjs(today).format('dddd, MMMM D YYYY, h:mm:ss a');
-    $('#currentDay').text(reformatDate);
+  var today = dayjs();
+  $('#currentDay').text(today.format('MMM D, YYYY, h a' ));
   });
     
     //I want to create a loop function that goes thru each of the hour blocks in HTML.
