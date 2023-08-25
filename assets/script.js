@@ -24,6 +24,7 @@ $(function () {
         else {
         $(this).removeClass('past present').addClass('future');}
 
+
         //CODE ABOVE HERE NOW WORKS AND CALENDAR IS NOW FUNCTIONING. ON TO LOCAL STORAGE
       
         
@@ -31,16 +32,21 @@ $(function () {
         var button = $(this).children().eq(2);;
         var textarea = $(this).children().eq(1);;
       
-        //hourBlock variable which was defined above is the key to local storage. textValue is user entered and goes to storage
-        //will later user this hourblock and put it into the main function so that it auto populates when the page is refreshed
-      button.on('click', function() {
-        var textValue = textarea.val();
-        localStorage.setItem(hourBlock, textValue);});});
+        //now that below is saved to local storage. added above for main function
+        //here we get item from local storage using our key hourBlock. We then use that key to return the value previously saved
+        var savedText = localStorage.getItem(hourBlock);
+        textarea.val(savedText);
+      
+//hourBlock variable which was defined above is the key to local storage. textValue is user entered and goes to storage
+//will later user this hourblock and put it into the main function so that it auto populates when the page is refreshed
+button.on('click', function() {
+  var textValue = textarea.val();
+  localStorage.setItem(hourBlock, textValue);
 
-      });
-//CODE ABOVE HERE NOW WORKS AND CALENDAR IS NOW FUNCTIONING. ON TO LOCAL STORAGE
 
+});});
 
+});
 
 
 
